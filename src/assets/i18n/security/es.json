@@ -1,0 +1,9 @@
+{
+    "login": {
+        "title": "Inciar sesión",
+        "username": "Nombre de usuario",
+        "password": "Clave",
+        "return": "Regresar",
+        "send": "Enviar"
+    }
+}

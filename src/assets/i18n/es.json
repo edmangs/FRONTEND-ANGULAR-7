@@ -1,6 +1,7 @@
 {
-    "login": "Inciar sesión",
-    "userName": "Nombre de usuario",
-    "password": "Clave",
-    "send": "Enviar"
+    "form": {
+        "error": {
+            "required": "El campo no puede estar vacío"
+        } 
+    }
 }

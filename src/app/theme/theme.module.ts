@@ -1,17 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DashboardRoutingModule } from './dashboard-routing.module';
+import { ThemeRoutingModule } from './theme-routing.module';
 import { SharedModule } from '../shared/shared.module';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
-  declarations: [ ],
+  declarations: [
+    HomeComponent
+  ],
   imports: [
     CommonModule,
-    DashboardRoutingModule,
+    ThemeRoutingModule,
     SharedModule,
   ],
   exports: [
     SharedModule,
   ]
 })
-export class DashboardModule { }
+export class ThemeModule { }

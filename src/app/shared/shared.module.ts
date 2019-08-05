@@ -4,26 +4,41 @@ import { MaterialModule } from '../material/material.module';
 import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { MultiTranslateHttpLoader } from "ngx-translate-multi-http-loader";
 import { environment } from 'src/environments/environment';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+// AoT requires an exported function for factories
+export function HttpLoaderFactory(http: HttpClient) {
+  return new MultiTranslateHttpLoader(http, [
+    { prefix: "./assets/i18n/dashboard/", suffix: ".json" },
+    { prefix: "./assets/i18n/security/", suffix: ".json" },
+    { prefix: "./assets/i18n/shared/", suffix: ".json" },
+    { prefix: "./assets/i18n/theme/", suffix: ".json" },
+    { prefix: "./assets/i18n/", suffix: ".json" },
+  ]);
+}
 
 @NgModule({
-  declarations: [ ],
+  declarations: [],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'}),
     MaterialModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        useFactory: (http: HttpClient) => {
-          return new TranslateHttpLoader(http);
-        },
+        useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
     }),
-  ], 
-  exports: [ 
+  ],
+  exports: [
     MaterialModule,
     TranslateModule,
+    FormsModule,
+    ReactiveFormsModule,
   ]
 })
 export class SharedModule {

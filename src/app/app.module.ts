@@ -5,11 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
+
 import { DashboardModule } from './dashboard/dashboard.module';
-import { MaterialModule } from './material/material.module';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { SecurityModule } from './security/security.module';
+import { ThemeModule } from './theme/theme.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule,
     SharedModule,
+    ThemeModule,
     DashboardModule,
+    SecurityModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
