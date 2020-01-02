@@ -6,6 +6,8 @@ import { UserService } from '../services/USer.service';
 import { TranslateService } from '@ngx-translate/core';
 import { UserEditComponent } from '../user-edit/user-edit.component';
 import { UserModel } from '../models/user.model';
+import { UserDetailComponent } from '../user-detail/user-detail.component';
+import { UserDeleteComponent } from '../user-delete/user-delete.component';
 
 @Component({
   selector: 'app-user-list',
@@ -93,8 +95,32 @@ export class UserListComponent implements OnInit {
     });
   }
 
-  delete(){}
+  delete(user: UserModel){
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.data = user;
 
-  detail(){}
+    const dialogRef = this.dialog.open(UserDeleteComponent, dialogConfig);
+
+    dialogRef.beforeClosed().subscribe(
+      val => {
+        if (val) {
+          this.loadData();
+        }
+      }
+    );
+  }
+
+  detail(user: UserModel){
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.panelClass = 'edit-modalbox';
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.data = user;
+    dialogConfig.width = '70%';
+
+    const dialogRef = this.dialog.open(UserDetailComponent, dialogConfig);
+  }
 
 }

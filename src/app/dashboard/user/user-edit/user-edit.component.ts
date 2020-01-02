@@ -37,6 +37,7 @@ export class UserEditComponent implements OnInit {
       firstName: [null, Validators.compose([Validators.required, Validators.maxLength(255)])],
       email: [null, Validators.compose([Validators.required, Validators.maxLength(255), Validators.email])],
       age: [null, Validators.compose([])],
+      id: [null, Validators.compose([])],
     });
   }
 

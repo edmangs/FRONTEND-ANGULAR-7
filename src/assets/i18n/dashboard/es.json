@@ -8,7 +8,10 @@
             "title": "Conformar acción",
             "message": "¿Desea continuar con la acción actual"
         },
+        "close": "Cerrar",
         "create": "Crear",
+        "delete": "Eliminar",
+        "detail": "Detalle",
         "edit": "Editar",
         "itemsPerPageLabel": "Items por página",
         "new": "Crear nuevo",
