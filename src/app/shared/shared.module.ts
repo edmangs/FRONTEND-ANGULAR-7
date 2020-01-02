@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common';
 import { MaterialModule } from '../material/material.module';
 import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { MultiTranslateHttpLoader } from "ngx-translate-multi-http-loader";
 import { environment } from 'src/environments/environment';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ConfirmComponent } from './component/confirm/confirm.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -20,7 +20,9 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    ConfirmComponent
+  ],
   imports: [
     CommonModule,
     FormsModule,
@@ -39,8 +41,13 @@ export function HttpLoaderFactory(http: HttpClient) {
     TranslateModule,
     FormsModule,
     ReactiveFormsModule,
+    ConfirmComponent
+  ],
+  entryComponents: [
+    ConfirmComponent
   ]
 })
+
 export class SharedModule {
   constructor(translate: TranslateService) {
     translate.setDefaultLang(environment.locale);

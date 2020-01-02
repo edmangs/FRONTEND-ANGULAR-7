@@ -1,1 +1,33 @@
-{}
+{
+    "all": {
+        "actions": "Acciones",
+        "cancel": "Cancelar",
+        "clear": "Limpiar",
+        "consult": "Consultar",
+        "confirm": {
+            "title": "Conformar acción",
+            "message": "¿Desea continuar con la acción actual"
+        },
+        "create": "Crear",
+        "edit": "Editar",
+        "itemsPerPageLabel": "Items por página",
+        "new": "Crear nuevo",
+        "not": "No",
+        "notData": "No hay datos",
+        "save": "guardar",
+        "search": "Buscar",
+        "yes": "Yes"         
+    },
+    "form": {
+        "error": {
+            "email": "Formato de correo electrónico invalido.",
+            "required": "Campo requerido." 
+        }
+    },
+    "user": {
+        "age": "Edad",
+        "email": "Correo electrónico",
+        "firstName": "Nombres",
+        "lastName": "Apellidos"
+    }
+}
